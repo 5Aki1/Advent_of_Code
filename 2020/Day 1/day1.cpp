@@ -26,9 +26,11 @@ std::vector<int> readFile(std::string file)
 }
 
 
-int combinations(std::vector<int>& input, int count) {
+int combinations(std::vector<int> &input, int count) 
+{
 	std::vector<bool> mask(input.size());
 	std::fill(mask.end() - count, mask.end(), true);
+
 	do {
 		int temp = 0;
 		int result = 1;
@@ -49,7 +51,6 @@ int combinations(std::vector<int>& input, int count) {
 int main() {
 	std::vector<int> expenseReport = readFile("src/2020/Day 1/input1.txt");
 	int first = combinations(expenseReport, 2);
-	int second = combinations(expenseReport, 3);
-	std::cout << first << second;
+	std::cout << first;
 	
 }
